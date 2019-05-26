@@ -1,0 +1,12 @@
+{% if phone_list %}
+<ul>
+    {% for general in phone_list %}
+    <li><a href="{% url 'phoneBase:detail' general.id %}">{{ general.producent }}</a>
+        <a href="{% url 'phoneBase:phone_delete' general.id %}">Delete</a>
+        <a href="{% url 'phoneBase:phone_update' general.id %}">Update</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No polls are available.</p>
+{% endif %}
+<a href="{% url 'phoneBase:add_phone' %}">Add a phone</a>

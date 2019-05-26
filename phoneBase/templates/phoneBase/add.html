@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<h1>Add phone form</h1>
+<form method="POST">
+    {% csrf_token %}
+
+    {{general_form.as_p}}
+    {{details_form.as_p}}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'phoneBase:index' %}">Strona glowna</a>
+</body>
+</html>

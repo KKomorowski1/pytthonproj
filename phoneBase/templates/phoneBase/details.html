@@ -1,0 +1,10 @@
+<h1>{{ general.producent}} {{general.typ}}</h1>
+<ul>
+    {% for detail in general.details_set.all %}
+    <li>{{ detail.procesor }}</li>
+    <li>{{ detail.pamiec }}</li>
+    <li>{{ detail.pamiec_ram }}</li>
+    <li>{{ detail.bateria }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'phoneBase:details_update' general.id%}">Update</a>
